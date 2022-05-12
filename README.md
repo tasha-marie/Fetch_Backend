@@ -32,9 +32,13 @@
 
 ## API's and their outputs
 
+### GET / server check to show that the server is up and running.
+
+<img height="100%" width="100%" src="/assets/images/API_running.png"/>
+
 ### POST /addPoints - Post request with JSON body. Outputs JSON object with key value pairs; payer and points. Adds points with payer and timestamp.
 
-## accessed at http://localhost:5000/points/addPoints
+## accessed at [http://localhost:5000/points/addPoints]
 
 Sample JSON objects:
 
@@ -78,7 +82,7 @@ Sample JSON objects:
 
 ### Deducts points from payers with oldest points deducted first as long as there are available points to be deducted
 
-## accessed at http://localhost:5000/points/deductPoints
+## accessed at [http://localhost:5000/points/deductPoints]
 
 Sample request body:
 
@@ -90,6 +94,6 @@ Sample request body:
 
 ### GET /getPoints - check points balance
 
-## accessed at http://localhost:5000/points/getPoints
+## accessed at [http://localhost:5000/points/getPoints]
 
 <img height="100%" width="100%" src="/assets/images/getPointsBalance.png"/>
