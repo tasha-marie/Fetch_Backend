@@ -4,12 +4,14 @@
 
 ### Additional packages:
 
-###### For date formatting:
+###### Moment - For date formatting:
 
 "moment": https://www.npmjs.com/package/moment
 </br>
 
-###### Automatically restarts server when chenges are detected. For use in development.
+###### Nodemon - Automatically restarts server when chenges are detected. For use in development:
+
+## in package.json at "scripts", change `"test": "echo \"Error: no test specified\" && exit 1"` to `"start": "nodemon index.js"`
 
 "nodemon": https://www.npmjs.com/package/nodemon
 </br>
@@ -26,13 +28,13 @@
 
 ## To start the server, execute `node index.js`
 
-## Server running at [http://localhost:5000]
+## Server running at http://localhost:5000
 
 ## API's and their outputs
 
 ### POST /addPoints - Post request with JSON body. Outputs JSON object with key value pairs; payer and points. Adds points with payer and timestamp.
 
-## accessed at [http://localhost:5000/points/addPoints]
+## accessed at http://localhost:5000/points/addPoints
 
 Sample JSON objects:
 
@@ -76,7 +78,7 @@ Sample JSON objects:
 
 ### Deducts points from payers with oldest points deducted first as long as there are available points to be deducted
 
-## accessed at [http://localhost:5000/points/deductPoints]
+## accessed at http://localhost:5000/points/deductPoints
 
 Sample request body:
 
@@ -88,6 +90,6 @@ Sample request body:
 
 ### GET /getPoints - check points balance
 
-## accessed at [http://localhost:5000/points/getPointsBalance]
+## accessed at http://localhost:5000/points/getPoints
 
 <img height="100%" width="100%" src="/assets/images/getPointsBalance.png"/>
