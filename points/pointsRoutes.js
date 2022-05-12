@@ -42,14 +42,14 @@ router.post("/deductPoints", (req, res) => {
     distributedPoints = distributedPoints.sort((a, b) => {
       return new Date(a.time) - new Date(b.time);
     });
-    remaning = reqPoints;
+    remaining = reqPoints;
     deductedJSON = {};
 
     // calculate deductable points
     for (let i = 0; i < distributedPoints.length; i++) {
       let deducted = 0;
       curPoints = distributedPoints[i];
-      if (curPoints - remaining >= 0) {
+      if (curPoints.points - remaining >= 0) {
         deducted = remaining;
         distributedPoints[i].points -= deducted;
       } else {
