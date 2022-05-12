@@ -36,10 +36,52 @@
 
 Sample JSON objects:
 
-{ "payer": "DANNON", "points": 300, "time": "10/31/2020 10:00 AM" }
-{ "payer": "UNILEVER", "points": 200, "time": "10/31/2020 11:00 AM" }
-{ "payer": "DANNON", "points": -200, "time": "10/31/2020 3:00 PM" }
-{ "payer": "MILLER COORS", "points": 10000, "time": "11/1/2020 2:00 PM" }
-{ "payer": "DANNON", "points": 1000, "time": "11/2/2020 2:00 PM" }
+{
+"payer": "DANNON",
+"points": 300,
+"time": "10/31/2020 10:00 AM"
+}
 
-<img height="100%" width="100%" src="/assets/images/addPoints1.png/>
+{
+"payer": "UNILEVER",
+"points": 200,
+"time": "10/31/2020 11:00 AM"
+}
+
+{
+"payer": "DANNON",
+"points": -200,
+"time": "10/31/2020 3:00 PM"
+}
+
+{
+"payer": "MILLER COORS",
+"points": 10000,
+"time": "11/1/2020 2:00 PM"
+}
+
+{
+"payer": "DANNON",
+"points": 1000,
+"time": "11/2/2020 2:00 PM"
+}
+
+<img height="100%" width="100%" src="/assets/images/addPoints1.png"/>
+<img height="100%" width="100%" src="/assets/images/addPoints2.png"/>
+<img height="100%" width="100%" src="/assets/images/addPoints3.png"/>
+<img height="100%" width="100%" src="/assets/images/addPoints4.png"/>
+<img height="100%" width="100%" src="/assets/images/addPoints5.png"/>
+
+### POST /deductPoints - Post request with JSON body. Outputs a JSON object with payer name and points deducted.
+
+### Deducts points from payers with oldest points deducted first as long as there are available points to be deducted
+
+### accessed at [http://localhost:5000/points/deductPoints]
+
+Sample request body:
+
+{
+"points": 5000
+}
+
+<img height="100%" width="100%" src="/assets/images/deductPoints.png"/>
