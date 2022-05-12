@@ -26,7 +26,7 @@
 
 #### In your terminal, execute `npm install` to install dependencies
 
-## To start the server, execute `node index.js`
+## To start the server, execute `npm start`
 
 ## Server running at http://localhost:5000
 
