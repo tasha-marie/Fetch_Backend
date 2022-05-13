@@ -4,19 +4,19 @@
 
 ### Additional packages:
 
-###### Moment - For date formatting:
+#### Moment - For date formatting:
 
 "moment": https://www.npmjs.com/package/moment
 </br>
 
-###### Nodemon - Automatically restarts server when chenges are detected. For use in development:
+#### Nodemon - Automatically restarts server when chenges are detected. For use in development:
 
 ## in package.json at "scripts", change `"test": "echo \"Error: no test specified\" && exit 1"` to `"start": "nodemon index.js"`
 
 "nodemon": https://www.npmjs.com/package/nodemon
 </br>
 
-###### Jest and Supertest for testing
+#### Jest and Supertest for testing
 
 "jest": https://jestjs.io/
 
