@@ -16,6 +16,14 @@
 "nodemon": https://www.npmjs.com/package/nodemon
 </br>
 
+###### Jest and Supertest for testing
+
+"jest": https://jestjs.io/
+
+"supertest" https://www.npmjs.com/package/supertest
+
+#### To start tests, open `__tests__` folder, then `test.js` In terminal, type `npm test` to run tests
+
 ### Tested endpoints using Insomnia at [https://insomnia.rest/](https://insomnia.rest/)
 
 ### Instructions to run code
