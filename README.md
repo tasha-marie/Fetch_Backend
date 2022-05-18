@@ -11,7 +11,7 @@
 
 #### Nodemon - Automatically restarts server when chenges are detected. For use in development:
 
-## in package.json at "scripts", change `"test": "echo \"Error: no test specified\" && exit 1"` to `"start": "nodemon index.js"`
+## in package.json at "scripts", change `"start": node index.js"` to `"start": "nodemon index.js"`
 
 "nodemon": https://www.npmjs.com/package/nodemon
 </br>

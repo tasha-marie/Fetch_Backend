@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const { body, validationResult } = require("express-validator");
 const moment = require("moment");
 
 let totalPoints = {};
@@ -10,21 +10,44 @@ router.get("/getPoints", (req, res) => {
   res.send(totalPoints);
 });
 
-router.post("/addPoints", (req, res) => {
-  // push into distributedPoints and total points in totalPoints variables
-  record = req.body;
-  record.time = moment(record.time, "MM/DD/YYYY h:m a").toDate();
+router.post(
+  "/addPoints",
+  [
+    body("payer").isString().toUpperCase(),
+    body("points").isInt().toInt(),
+    body("timestamp").isISO8601(),
+    body()
+      .custom((body) => {
+        const keys = ["payer", "points", "timestamp"];
+        return Object.keys(body).every((key) => keys.includes(key));
+      })
+      .withMessage(
+        "Invalid entry. Parameters restricted to payer: <str>, points:<int>, timestamp:<ISO8601>"
+      ),
+  ],
+  (req, res, next) => {
+    const errors = validationResult(req);
+    // return error if req body does not pass validation
+    if (!errors.isEmpty())
+      return res.status(422).send(errors.array({ onlyFirstError: true }));
+    next();
+  },
+  (req, res) => {
+    // push into distributedPoints and total points in totalPoints variables
+    record = req.body;
+    record.time = moment(record.time).toDate();
 
-  distributedPoints.push(record);
+    distributedPoints.push(record);
 
-  if (totalPoints[record.payer]) {
-    totalPoints[record.payer] += record.points;
-  } else {
-    totalPoints[record.payer] = record.points;
+    if (totalPoints[record.payer]) {
+      totalPoints[record.payer] += record.points;
+    } else {
+      totalPoints[record.payer] = record.points;
+    }
+
+    res.send(totalPoints);
   }
-
-  res.send(totalPoints);
-});
+);
 
 router.post("/deductPoints", (req, res) => {
   let sum = 0;
